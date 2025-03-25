@@ -1,0 +1,218 @@
+<section class="login flex justify-center pt-24">
+    <div class="w-full max-w-xs">
+        <form action="/login" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <% if(messages.error) { %>
+            <span class="text-red-500 text-sm"><%= messages.error %></span>
+            <% } %>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                    Email
+                </label>
+                <input name="email"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="username" type="email" placeholder="Enter your email">
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                    Password
+                </label>
+                <input name="password"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    id="password" type="password" placeholder="******************">
+            </div>
+            <div class="flex items-center justify-between">
+                <button
+                    class="btn-primary rounded-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="submit">
+                    Log In
+                </button>
+                <a class="inline-block align-baseline font-bold text-sm" href="/register">
+                    Don't have account?
+                </a>
+            </div>
+        </form>
+        <p class="text-center text-gray-500 text-xs">
+            &copy;Evelyn Jessica. All rights reserved.
+        </p>
+    </div>
+</section>
+<footer class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto flex items-center justify-between">
+        <p class="text-sm">Developed by Evelyn Jessica | Meal Mate &copy; 2024. All rights reserved.</p>
+        <ul class="flex items-center">
+            <li class="ml-4"><a href="#">Privacy Policy</a></li>
+            <li class="ml-4"><a href="#">Terms of Service</a></li>
+            <!-- Add other necessary links here -->
+        </ul>
+    </div>
+</footer>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Accessibility Enabled</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .accessibility-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .popup-content {
+            background-color: #1a202c;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+        }
+        .popup-content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .popup-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+<section class="login flex justify-center pt-24">
+    <div class="w-full max-w-xs">
+        <form action="/login" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" id="loginForm">
+            <% if(messages.error) { %>
+            <span class="text-red-500 text-sm"><%= messages.error %></span>
+            <% } %>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                    Email
+                </label>
+                <input name="email" id="username" type="email" placeholder="Enter your email" 
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                    Password
+                </label>
+                <input name="password" id="password" type="password" placeholder="******************" 
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="flex items-center justify-between">
+                <button class="btn-primary rounded-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    Log In
+                </button>
+                <a class="inline-block align-baseline font-bold text-sm" href="/register">
+                    Don't have an account?
+                </a>
+            </div>
+        </form>
+        <p class="text-center text-gray-500 text-xs">&copy;Evelyn Jessica. All rights reserved.</p>
+    </div>
+</section>
+
+<footer class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto flex items-center justify-between">
+        <p class="text-sm">Developed by Evelyn Jessica | Meal Mate &copy; 2024. All rights reserved.</p>
+        <ul class="flex items-center">
+            <li class="ml-4"><a href="#">Privacy Policy</a></li>
+            <li class="ml-4"><a href="#">Terms of Service</a></li>
+        </ul>
+    </div>
+</footer>
+
+<div class="accessibility-popup" id="accessibilityPopup">
+    <div class="popup-content">
+        <h2>Welcome to Meal Mate</h2>
+        <p>Please say "Yes" if you need voice assistance or "No" to proceed without it.</p>
+    </div>
+</div>
+
+<script>
+// Voice recognition and synthesis setup
+const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+const synth = window.speechSynthesis;
+recognition.lang = 'en-US';
+recognition.interimResults = false;
+recognition.maxAlternatives = 1;
+
+// Show accessibility pop-up on page load
+window.onload = function() {
+    const popup = document.getElementById('accessibilityPopup');
+    popup.style.display = 'flex';
+    const instructionMessage = new SpeechSynthesisUtterance("Please say Yes if you need voice assistance or No to proceed without it.");
+    synth.speak(instructionMessage);
+    recognition.start();
+
+    recognition.onresult = function(event) {
+        const command = event.results[0][0].transcript.toLowerCase();
+        if (command.includes('yes')) {
+            popup.style.display = 'none';
+            activateAccessibility();
+        } else if (command.includes('no')) {
+            popup.style.display = 'none';
+            const noMessage = new SpeechSynthesisUtterance("Alright, proceed with the form.");
+            synth.speak(noMessage);
+        } else {
+            const errorMessage = new SpeechSynthesisUtterance("I didn't catch that. Please say Yes or No.");
+            synth.speak(errorMessage);
+            recognition.start();
+        }
+    };
+};
+
+// Accessibility feature activation
+function activateAccessibility() {
+    const assistMessage = new SpeechSynthesisUtterance("Voice assistance is now active. Please say 'Email' to enter your email, followed by 'Password' to enter your password, and finally say 'Submit' to log in.");
+    synth.speak(assistMessage);
+    recognition.start();
+
+    let currentField = '';
+
+    recognition.onresult = function(event) {
+        const command = event.results[0][0].transcript.toLowerCase();
+
+        if (command.includes('email')) {
+            currentField = 'email';
+            const emailPrompt = new SpeechSynthesisUtterance("Please speak your email address now.");
+            synth.speak(emailPrompt);
+        } else if (currentField === 'email') {
+            document.getElementById('username').value = command;
+            const passwordPrompt = new SpeechSynthesisUtterance("Email entered. Now say 'Password' to enter your password.");
+            synth.speak(passwordPrompt);
+            currentField = '';
+        } else if (command.includes('password')) {
+            currentField = 'password';
+            const passwordPrompt = new SpeechSynthesisUtterance("Please speak your password now.");
+            synth.speak(passwordPrompt);
+        } else if (currentField === 'password') {
+            document.getElementById('password').value = command;
+            const submitPrompt = new SpeechSynthesisUtterance("Password entered. Say 'Submit' to log in.");
+            synth.speak(submitPrompt);
+            currentField = '';
+        } else if (command.includes('submit')) {
+            document.getElementById('loginForm').submit();
+        } else {
+            const errorMessage = new SpeechSynthesisUtterance("I didn't catch that. Please try again.");
+            synth.speak(errorMessage);
+            recognition.start();
+        }
+    };
+}
+</script>
+</body>
+</html> -->

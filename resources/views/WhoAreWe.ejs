@@ -1,0 +1,24 @@
+<section class="who_are_we" id="who_are_we">
+  <div class="container">
+    <div class="text_banner">
+      <% data[0].who_we_are.slice(0, 2).forEach(function(element) { %>
+        <div class="card">
+          <h1 class="heading" style="font-weight: 300;"><%= element.number %></h1>
+          <p><%= element.title %></p>
+        </div>
+      <% }); %>
+    </div>
+    <div class="image_banner">
+      <img class="gradient_bg" src="center.svg" alt="gradientBg" />
+      <img src="whoweare.png" alt="food" />
+    </div>
+    <div class="text_banner">
+      <% data[0].who_we_are.slice(2).forEach(function(element) { %>
+        <div class="card">
+          <h1 class="heading" style="font-weight: 300;"><%= element.number %></h1>
+          <p><%= element.title %></p>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</section>

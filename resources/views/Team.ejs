@@ -1,0 +1,21 @@
+<section class="team" id="team">
+  <div class="container">
+    <div class="heading_section">
+      <h1 class="heading">OUR TEAM</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae fugit
+        dicta, ipsum impedit quam laboriosam quas doloremque quia perferendis
+        laborum.
+      </p>
+    </div>
+    <div class="team_container">
+      <% data[0].team.forEach(function(element) { %>
+        <div class="card">
+          <img src="<%= element.image %>" alt="<%= element.name %>" />
+          <h3><%= element.name %></h3>
+          <p><%= element.designation %></p>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</section>

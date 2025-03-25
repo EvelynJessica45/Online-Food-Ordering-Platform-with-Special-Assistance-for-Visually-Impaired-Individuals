@@ -1,0 +1,32 @@
+<section class="status">
+    <div class="container mx-auto">
+        <div class="status-box w-full lg:w-2/3 mx-auto">
+            <div class="flex items-center justify-between mb-12">
+                <h1 class="text-xl font-bold">Track delivery status</h1>
+                <h6 class="bg-white py-1 rounded-full px-4 text-green-600 text-xs"><%=
+                    order._id %></h6>
+                <input id="hiddenInput" type="hidden" value="<%= JSON.stringify(order) %>">
+            </div>
+            <ul>
+                <li class="status_line text-sm md:text-xl pb-16" data-status="order_placed"><span>Order Placed</span>
+                </li>
+                <li class="status_line text-sm md:text-xl pb-16" data-status="confirmed"><span>Order confirmation</span>
+                </li>
+                <li class="status_line text-sm md:text-xl pb-16" data-status="prepared"><span>Preparation</span></li>
+                <li class="status_line text-sm md:text-xl pb-16" data-status="delivered"><span>Out for delivery </span>
+                </li>
+                <li class="status_line text-sm md:text-xl" data-status="completed"><span>Complete</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<footer class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto flex items-center justify-between">
+        <p class="text-sm">Developed by Evelyn Jessica | Meal Mate &copy; 2024. All rights reserved.</p>
+        <ul class="flex items-center">
+            <li class="ml-4"><a href="#">Privacy Policy</a></li>
+            <li class="ml-4"><a href="#">Terms of Service</a></li>
+            <!-- Add other necessary links here -->
+        </ul>
+    </div>
+</footer>

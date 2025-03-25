@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review and Complaint Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto py-12">
+        <h1 class="text-3xl font-bold mb-6">Reviews</h1>
+      
+        <div id="success-message-review" class="hidden bg-green-500 text-white p-4 rounded mb-4">
+            Review submitted successfully!
+        </div>
+        
+        <form id="review-form">
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-700">Your Name:</label>
+                <input type="text" name="name" id="name" class="border border-gray-300 rounded px-3 py-2 mt-1 w-full" required>
+            </div>
+      
+            <div class="mb-4">
+                <label for="rating" class="block text-sm font-medium text-gray-700">Rating:</label>
+                <select name="rating" id="rating" class="border border-gray-300 rounded px-3 py-2 mt-1 w-full" required>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="1">⭐</option>
+                </select>
+            </div>
+      
+            <div class="mb-4">
+                <label for="review" class="block text-sm font-medium text-gray-700">Your Review:</label>
+                <textarea name="review" id="review" rows="4" class="border border-gray-300 rounded px-3 py-2 mt-1 w-full" required></textarea>
+            </div>
+      
+            <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Submit Review</button>
+        </form>
+
+        <h1 class="text-3xl font-bold my-6">Complaints</h1>
+
+        <div id="success-message-complaint" class="hidden bg-green-500 text-white p-4 rounded mb-4">
+            Complaint submitted successfully!
+        </div>
+        
+        <form id="complaint-form" class="relative">
+            <div class="mb-4">
+                <label for="complaint-name" class="block text-sm font-medium text-gray-700">Your Name:</label>
+                <input type="text" name="complaint-name" id="complaint-name" class="border border-gray-300 rounded px-3 py-2 mt-1 w-full" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="complaint-type" class="block text-sm font-medium text-gray-700">Type of Complaint:</label>
+                <select name="complaint-type" id="complaint-type" class="border border-gray-300 rounded px-3 py-2 mt-1 w-full" required>
+                    <option value="service">Service</option>
+                    <option value="product">Product</option>
+                    <option value="delivery">Delivery</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+      
+            <div class="mb-4">
+                <label for="complaint" class="block text-sm font-medium text-gray-700">Your Complaint:</label>
+                <textarea name="complaint" id="complaint" rows="4" class="border border-gray-300 rounded px-3 py-2 mt-1 w-full" required oninput="updateCharCount()"></textarea>
+                <p id="char-count" class="text-sm text-gray-500">0/500</p>
+            </div>
+
+            <div class="mb-4">
+                <label for="evidence" class="block text-sm font-medium text-gray-700">Upload Evidence (optional):</label>
+                <input type="file" name="evidence" id="evidence" class="border border-gray-300 rounded px-3 py-2 mt-1 w-full">
+            </div>
+
+            <div class="mb-4 flex items-center">
+                <label for="urgent" class="block text-sm font-medium text-gray-700 mr-2">Mark as Urgent:</label>
+                <input type="checkbox" name="urgent" id="urgent" class="form-checkbox h-5 w-5 text-red-600">
+            </div>
+      
+            <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition duration-300 transform hover:scale-105">Submit Complaint</button>
+        </form>
+      
+    </div>
+
+    <script>
+        document.getElementById('review-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            document.getElementById('success-message-review').classList.remove('hidden');
+            // Optional: Reset the form
+            this.reset();
+        });
+
+        document.getElementById('complaint-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            document.getElementById('success-message-complaint').classList.remove('hidden');
+            // Optional: Reset the form
+            this.reset();
+            // Reset character count
+            document.getElementById('char-count').textContent = '0/500';
+        });
+
+        function updateCharCount() {
+            const complaint = document.getElementById('complaint');
+            const charCount = complaint.value.length;
+            document.getElementById('char-count').textContent = `${charCount}/500`;
+        }
+    </script>
+</body>
+</html>

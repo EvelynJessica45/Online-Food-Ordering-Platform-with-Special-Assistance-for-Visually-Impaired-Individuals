@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualities</title>
+    <!-- Include your CSS stylesheets -->
+    <link rel="stylesheet" href="/path/to/your/styles.css">
+</head>
+
+<body>
+    <section class="qualities" id="qualities">
+        <div class="container">
+            <% data[0].ourQualities.forEach(function(element) { %>
+                <div class="card">
+                    <img src="<%= element.image %>" alt="<%= element.title %>" />
+                    <p class="title"><%= element.title %></p>
+                    <p class="description"><%= element.description %></p>
+                </div>
+            <% }); %>
+        </div>
+    </section>
+
+    <!-- Include your JavaScript scripts -->
+    <script src="/path/to/your/scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<section class="hero py-16">
+    <div class="container mx-auto flex items-center justify-between">
+        <div class="w-1/2">
+            <h6 class="text-lg" style="font-style: italic; color: #4a5568;">Ready for a flavor adventure?</h6>
+            <h1 class="text-3xl md:text-6xl font-bold" style="color: #1a202c;">Satisfy your cravings now!🍽️🍔</h1>
+            <p class="text-xl mt-4" style="color: #4a5568;">Discover our mouthwatering menu.</p>
+            <p class="text-xl mt-4" style="color: #4a5568;">Indulge in deliciousness!</p>
+            <p class="text-xl mt-4" style="color: #4a5568;">Don't resist the temptation.</p>
+            <div class="flex items-center mt-4">
+                <button class="px-6 py-2 rounded-full text-white font-bold btn-primary" onclick="scrollToMenu()">Explore Menu📋</button>
+                <img src="/img/Food.png" alt="QR Code to View Menu" style="width: 170px; height: auto; display: block; border: 5px solid #ddd;">
+            </div>
+        </div>
+        <div class="w-1/2">
+            <img src="/img/hero-pizza.png" alt="">
+        </div>
+    </div>
+</section>
+
+<section class="menu container mx-auto py-8" id="menu">
+    <h1 class="text-xl font-bold mb-8">MENU</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 col-gap-12 row-gap-16">
+        <% pizzas.forEach(function(pizza) { %>
+        <div class="w-full md:w-64">
+            <img class="h-40 mb-4 mx-auto" src="/img/<%= pizza.image %>" alt="">
+            <div class="text-center">
+                <h2 class="mb-4 text-lg"><%= pizza.name %></h2>
+                <span class="size py-1 px-4 rounded-full uppercase text-xs"><%= pizza.size %></span>
+                <div class="mt-2 text-sm text-gray-600">Calories: <%= pizza.calories %> kcal</div>
+                <div class="flex items-center justify-center mt-6">
+                    <span class="font-bold text-lg">₹<%= pizza.price %></span>
+                    <button data-pizza="<%= JSON.stringify(pizza) %>" class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-4">
+                        <span>+</span>
+                        <span class="ml-4">Add</span>
+                    </button>
+                </div>
+                <div class="flex items-center justify-center mt-4">
+                    <button onclick="readPizzaInfo('<%= pizza.name %>', '<%= pizza.price %>', '<%= pizza.calories %>')" class="read-info py-1 px-6 rounded-full flex items-center font-bold">
+                        <span>📢</span>
+                        <span class="ml-4">Read</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</section>
+
+<footer class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto flex items-center justify-between">
+        <p class="text-sm">Developed by Evelyn Jessica | Meal Mate &copy; 2024. All rights reserved.</p>
+        <ul class="flex items-center">
+            <li class="ml-4"><a href="#">Privacy Policy</a></li>
+            <li class="ml-4"><a href="#">Terms of Service</a></li>
+            <!-- Add other necessary links here -->
+        </ul>
+    </div>
+</footer>
+
+<!-- FAQ Image Button -->
+<img src="/img/faq.png" alt="FAQ" class="faq-button" onclick="openFAQModal()">
+
+<!-- FAQ Modal -->
+<div id="faq-modal" class="faq-modal hidden">
+    <div class="faq-modal-content">
+        <span class="close" onclick="closeFAQModal()">&times;</span>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>How do I place an order?</h3>
+            <p>You can place an order by selecting the items from our menu and adding them to your cart. Once you're ready, proceed to checkout to complete your order.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What payment methods do you accept?</h3>
+            <p>We accept various payment methods including credit/debit cards, net banking, and popular e-wallets.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can I track my order?</h3>
+            <p>Yes, you can track your order in real-time from our app or website under the 'Order Status' section.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is your delivery time?</h3>
+            <p>Our average delivery time is between 30 to 45 minutes, depending on your location and order size.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can I cancel my order?</h3>
+            <p>You can cancel your order within the first 5 minutes of placing it. After that, cancellations may not be possible.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function scrollToMenu() {
+        var menuSection = document.getElementById('menu');
+        var offsetTop = menuSection.offsetTop;
+
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
+    }
+
+    function readPizzaInfo(name, price, calories) {
+        var message = `Item name: ${name}. Price: ₹${price}. Calories: ${calories} kilocalories.`;
+        var speech = new SpeechSynthesisUtterance(message);
+        speechSynthesis.speak(speech);
+    }
+    
+
+    function openFAQModal() {
+        document.getElementById('faq-modal').classList.remove('hidden');
+    }
+
+    function closeFAQModal() {
+        document.getElementById('faq-modal').classList.add('hidden');
+    }
+</script>
+
+<style>
+    .faq-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+
+    .faq-modal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .faq-modal.hidden {
+        display: none;
+    }
+
+    .faq-modal-content {
+        background-color: white;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .faq-modal-content h2 {
+        margin-top: 0;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .faq-item {
+        margin-bottom: 20px;
+    }
+
+    .faq-item h3 {
+        margin-bottom: 10px;
+    }
+</style>

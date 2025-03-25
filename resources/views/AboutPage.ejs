@@ -1,0 +1,112 @@
+<div class="float-parent-element" style="width: 100%;">  
+    <div class="float-child-element" style="float: left; width: 30%;">
+        <div class="yellow" style="margin-right: -40px;">
+          <img src="\img\10595885.png" alt="about" style="max-width: 1000px; height: auto;" /> </div>
+      </div>
+      
+    <div class="float-child-element" style="float: left; width: 70%; max-width: 50%; margin-left: 300px; margin-bottom: 100px;"> 
+    <div class="red" style="font-size: 30px;">
+    <h1 class="text-3xl md:text-6xl font-bold"><center>About Us!📜</center></h1>
+    <h3 class="text-2xl md:text-4xl font-bold"  style="color:#808080"><center>Welcome to MealMate🍕</center></h3><br>
+    <p> Your go-to destination for delicious meals delivered right to your doorstep.
+       We offer a wide selection of cuisines from local restaurants, ensuring freshness
+       and quality with every order. With our convenient platform and reliable service, 
+       ordering your favorite meals has never been easier. Plus, by supporting 
+       local businesses, we're actively contributing to the growth of our community. 
+       Join us on this culinary journey and experience the difference today!</p>
+    <button class="px-6 py-2 rounded-full text-white font-bold mt-4 btn-primary" style="margin-right: 20px; position: relative;"onclick="scrollToMenu()">Explore Menu</button>  <br> </div>
+</div>
+
+<div style="height: 200px;"></div>
+<br>
+<div class="team-section" style="margin-top:100px; margin-bottom: 40px;">
+  <br>
+  <br>
+  <h3 class="text-3xl md:text-5xl font-bold"  style="color:#808080"><center>Meet Our Team🍳👨‍🍳</center></h3><br>
+    <p style="font-size: 30px; margin-left: 60px;margin-right: 60px;"> "Our dedicated team of food delivery experts is
+       committed to bringing delicious meals right to your doorstep.
+        From our friendly customer service representatives who ensure
+         your orders are taken with care, to our efficient delivery 
+         drivers who navigate the streets with precision, each member 
+         plays a crucial role in ensuring your dining experience is 
+         nothing short of exceptional. With a passion for food and a 
+         dedication to service, our team is here to make your mealtime 
+         convenient, enjoyable, and memorable."</p>
+  <br><br>
+  <div class="team-members flex justify-center space-x-12">
+    <div class="team-member">
+      <img src="\img\chef1.png" alt="Chef 1" class="rounded-full w-48 h-48 mx-auto mb-4">
+      <div class="text-center">
+        <h3 class="text-2xl font-bold mb-2">Chef John Doe</h3>
+
+          <p class="text-sm text-gray-600">Head Chef</p>
+      </div>
+    </div>
+    <div class="team-member">
+      <img src="\img\chef3.png" alt="Chef 1" class="rounded-full w-48 h-48 mx-auto mb-4">
+      <div class="text-center">
+          <h3 class="text-2xl font-bold mb-2"> Chef Emily Johnson</h3>
+         
+
+<p class="text-sm text-gray-600">Grill Chef</p>
+      </div>
+    </div>
+    <div class="team-member">
+      <img src="\img\chef2.png" alt="Chef 1" class="rounded-full w-48 h-48 mx-auto mb-4">
+      <div class="text-center">
+          <h3 class="text-2xl font-bold mb-2"> Chef David Lee</h3>
+         
+
+          <p class="text-sm text-gray-600">Pastry Chef</p>
+      </div>
+    </div>
+    <div class="team-member">
+      <img src="\img\chef4.png" alt="Chef 1" class="rounded-full w-48 h-48 mx-auto mb-4">
+      <div class="text-center">
+          <h3 class="text-2xl font-bold mb-2"> Chef Jane Smith</h3>
+         
+
+          <p class="text-sm text-gray-600">Sous Chef</p>
+      </div>
+    </div>
+    <!-- Repeat the above code for each team member -->
+  </div>
+</div>
+
+<footer class="bg-gray-800 text-white py-4">
+  <div class="container mx-auto flex items-center justify-between">
+      <p class="text-sm">Developed by Evelyn Jessica | Meal Mate &copy; 2024. All rights reserved.</p>
+      <ul class="flex items-center">
+          <li class="ml-4"><a href="#">Privacy Policy</a></li>
+          <li class="ml-4"><a href="#">Terms of Service</a></li>
+          <!-- Add other necessary links here -->
+      </ul>
+  </div>
+</footer>
+
+
+
+
+
+<style>
+    h2 {
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: dark;
+}
+</style>
+
+<script >
+   function scrollToMenu() {
+    // Get the menu section's offset from the top of the page
+    var menuSection = document.getElementById('menu');
+    var offsetTop = menuSection.offsetTop;
+
+    // Scroll smoothly to the menu section
+    window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+    });
+}
+</script>
+<script>"/views/home.ejs"</script>
