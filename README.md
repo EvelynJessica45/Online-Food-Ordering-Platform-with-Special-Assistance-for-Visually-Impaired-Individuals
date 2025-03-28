@@ -19,6 +19,35 @@ QR Realtime Pizza is a MERN stack-based food delivery application that enables u
 - **Real-time Updates**: Socket.io
 - **Deployment**: Vercel, Heroku
 
+## ScreenShots
+### Home Page  
+![Home](https://github.com/EvelynJessica45/Online-Food-Ordering-Platform-with-Special-Assistance-for-Visually-Impaired-Individuals/blob/2243eeca8283c550a4a89ed84aec22bd8720c77b/home.png)  
+
+### About Page  
+![About](https://github.com/EvelynJessica45/Online-Food-Ordering-Platform-with-Special-Assistance-for-Visually-Impaired-Individuals/blob/2243eeca8283c550a4a89ed84aec22bd8720c77b/about.png)  
+
+### Login Page  
+![Login](https://github.com/EvelynJessica45/Online-Food-Ordering-Platform-with-Special-Assistance-for-Visually-Impaired-Individuals/blob/2243eeca8283c550a4a89ed84aec22bd8720c77b/login.png)  
+
+### Register Page  
+![Register](https://github.com/EvelynJessica45/Online-Food-Ordering-Platform-with-Special-Assistance-for-Visually-Impaired-Individuals/blob/2243eeca8283c550a4a89ed84aec22bd8720c77b/register.png)  
+
+### Menu Page  
+![Menu](https://github.com/EvelynJessica45/Online-Food-Ordering-Platform-with-Special-Assistance-for-Visually-Impaired-Individuals/blob/2243eeca8283c550a4a89ed84aec22bd8720c77b/menu%20(2).png)  
+
+### New Orders Page  
+![New Orders](https://github.com/EvelynJessica45/Online-Food-Ordering-Platform-with-Special-Assistance-for-Visually-Impaired-Individuals/blob/3e63b763c00efd674f8b59fc51a02e951325145e/new%20orders.png)  
+
+### Order History  
+![Order History](https://github.com/EvelynJessica45/Online-Food-Ordering-Platform-with-Special-Assistance-for-Visually-Impaired-Individuals/blob/3e63b763c00efd674f8b59fc51a02e951325145e/history.png)  
+
+### Empty Cart Page  
+![No Items](https://github.com/EvelynJessica45/Online-Food-Ordering-Platform-with-Special-Assistance-for-Visually-Impaired-Individuals/blob/3e63b763c00efd674f8b59fc51a02e951325145e/noitems.png)  
+
+### Summary Page  
+![Summary](https://github.com/EvelynJessica45/Online-Food-Ordering-Platform-with-Special-Assistance-for-Visually-Impaired-Individuals/blob/3e63b763c00efd674f8b59fc51a02e951325145e/summary.png)  
+
+
 ## 📌 Installation & Setup
 ### Clone the repository
 ```sh
